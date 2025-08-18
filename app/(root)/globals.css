@@ -19,6 +19,14 @@
   }
 }
 
+.Container {
+  @apply py-4 mx-32;
+}
+
+.Inputs {
+  @apply bg-white w-[40pc] focus:outline-0 border-4 border-black rounded-full p-4 text-2xl font-bold;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
