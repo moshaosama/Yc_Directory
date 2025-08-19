@@ -16,14 +16,14 @@ const Hero = ({ Campaign, Description, Title, isInput }: HeroProps) => {
           <h1>{Campaign}</h1>
         </div>
 
-        <div className="bg-black w-[65pc] p-4">
-          <h1 className="text-white text-5xl font-extrabold text-center">
+        <div className="bg-black w-[65pc] p-4 max-sm:w-[20pc]">
+          <h1 className="text-white text-5xl max-sm:text-3xl font-extrabold text-center">
             {Title}
           </h1>
         </div>
 
         <div>
-          <p className="text-white text-sm">{Description}</p>
+          <p className="text-white text-sm max-sm:text-center">{Description}</p>
         </div>
 
         {isInput && (
