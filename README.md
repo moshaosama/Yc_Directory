@@ -20,7 +20,7 @@ Think of it as your personal hub 🔥 for startups — inspired by **Y Combinato
 ## 🎥 Live Preview
 
 <p align="center">
-  <img src="https://via.placeholder.com/900x500.png?text=YC+Directory+Preview" width="700" />
+  <img src="https://media.giphy.com/media/l0MYEqEzwMWFCg8rm/giphy.gif" width="700" />
 </p>
 
 > ⚡ Seamless user experience with stunning animations powered by **Framer Motion**.
