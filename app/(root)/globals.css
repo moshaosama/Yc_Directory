@@ -20,11 +20,11 @@
 }
 
 .Container {
-  @apply py-4 mx-32;
+  @apply py-4 mx-32 max-sm:mx-2;
 }
 
 .Inputs {
-  @apply bg-white w-[40pc] focus:outline-0 border-4 border-black rounded-full p-4 text-2xl font-bold;
+  @apply bg-white w-[40pc] max-sm:w-[20pc] focus:outline-0 border-4 border-black rounded-full p-4 text-2xl font-bold;
 }
 
 .StartUpCard {
