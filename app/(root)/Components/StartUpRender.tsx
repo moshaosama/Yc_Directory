@@ -7,7 +7,7 @@ export default async function StartUpRender() {
   const StartUps = await useGetStartups();
 
   return (
-    <div className="Container grid grid-cols-3 gap-10 max-sm:grid-cols-1">
+    <div className="Container w-full grid grid-cols-3 gap-10 max-sm:grid-cols-1">
       {Array.isArray(StartUps) &&
         StartUps?.map((startup) => (
           <Link
