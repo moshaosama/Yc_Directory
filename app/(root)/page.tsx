@@ -1,5 +1,6 @@
 import Hero from "./Components/Hero";
 import RecommendedStartups from "./Components/RecommendedStartups";
+import StartUpRender from "./Components/StartUpRender";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         isInput={true}
       />
       <RecommendedStartups />
+      <StartUpRender />
     </>
   );
 }
