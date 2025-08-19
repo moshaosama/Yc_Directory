@@ -1,8 +1,7 @@
-import { startUpService } from "@/Services/StartUp/StartupService";
-import axios from "axios";
 import useGetStartups from "../Hooks/useGetStartups";
 import { Eye } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default async function StartUpRender() {
   const StartUps = await useGetStartups();
@@ -11,7 +10,11 @@ export default async function StartUpRender() {
     <div className="Container grid grid-cols-3 gap-10 max-sm:grid-cols-1">
       {Array.isArray(StartUps) &&
         StartUps?.map((startup) => (
-          <div key={startup.id} className="StartUpCard">
+          <Link
+            href={String(startup.id)}
+            key={startup.id}
+            className="StartUpCard"
+          >
             <div className="flex justify-between mx-3">
               <h1>{startup.date}</h1>
               <div className="flex items-center gap-1">
@@ -54,7 +57,7 @@ export default async function StartUpRender() {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
     </div>
   );
