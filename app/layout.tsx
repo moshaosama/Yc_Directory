@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ReactQuery from "./libs/ReactQuery";
 import Navbar from "./Components/Navbar";
-import Footer from "./Components/Footer";
+import ConditionalFooter from "./libs/FooterWrabber";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +33,7 @@ export default function RootLayout({
         <ReactQuery>
           <Navbar />
           {children}
-          <Footer />
+          <ConditionalFooter />
         </ReactQuery>
       </body>
     </html>
