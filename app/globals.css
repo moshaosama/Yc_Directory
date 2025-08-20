@@ -31,6 +31,14 @@
   @apply border-t-4 border-t-black border-l-4 p-5 cursor-pointer hover:bg-[#ee2b6933] border-l-black border-r-8 border-r-black border-b-8 border-b-black rounded-xl hover:border-[#EE2B69] transition-all duration-500;
 }
 
+.parentUserCard {
+  @apply bg-[#EE2B69] w-72 p-2 rounded-xl border-l-4 border-t-4 border-b-8 border-r-8 border-black flex flex-col gap-10 relative items-center justify-center h-96;
+}
+
+.UserCard {
+  @apply w-52  rounded-xl border-4 border-black absolute -top-5 left-9  flex justify-center;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
