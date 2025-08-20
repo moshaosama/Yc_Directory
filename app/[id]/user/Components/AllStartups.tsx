@@ -1,17 +1,20 @@
-import useGetStartups from "../Hooks/useGetStartups";
+import useGetStartUpByid from "@/app/(root)/Hooks/useGetStartUpByid";
 import { Eye } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 
-export default async function StartUpRender() {
-  const StartUps = await useGetStartups();
+const AllStartups = async ({ params }: { params: { id: number } }) => {
+  const { id } = params;
+  const data = await useGetStartUpByid(id as number);
 
   return (
-    <div className="Container grid grid-cols-3 gap-10 max-sm:grid-cols-1">
-      {Array.isArray(StartUps) &&
-        StartUps?.map((startup) => (
+    <div className="flex flex-col gap-4">
+      <h1 className="text-2xl font-extrabold">All Startups</h1>
+
+      {Array.isArray(data) &&
+        data.map((startup) => (
           <Link
-            href={String(startup.id)}
+            href={String(`/${startup.id}`)}
             key={startup.id}
             className="StartUpCard"
           >
@@ -30,7 +33,7 @@ export default async function StartUpRender() {
                   <h1 className="text-xl font-bold">{startup.tag}</h1>
                 </div>
                 <div>
-                  <Image
+                  <img
                     src={"/Frame 70.png"}
                     alt="Frame.png"
                     width={50}
@@ -61,4 +64,6 @@ export default async function StartUpRender() {
         ))}
     </div>
   );
-}
+};
+
+export default AllStartups;
