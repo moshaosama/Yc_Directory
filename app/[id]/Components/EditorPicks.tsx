@@ -5,8 +5,8 @@ import React from "react";
 
 const EditorPicks = async () => {
   const data = await useGetStartups();
-  const idOne = Math.floor(Math.random() * data.length);
-  const idTwo = Math.floor(Math.random() * data.length);
+  const idOne = Math.floor(Math.random() * data?.length);
+  const idTwo = Math.floor(Math.random() * data?.length);
 
   const start = Math.min(idOne, idTwo);
   const end = Math.max(idOne, idTwo) + 1;
@@ -18,9 +18,9 @@ const EditorPicks = async () => {
 
         <div className="grid gap-4 grid-cols-3 mt-10">
           {data
-            .slice(start, end)
-            .slice(0, 3)
-            .map((startup) => (
+            ?.slice(start, end)
+            ?.slice(0, 3)
+            ?.map((startup) => (
               <div key={startup.id} className="StartUpCard">
                 <div className="flex justify-between mx-3">
                   <h1>{startup.date}</h1>
