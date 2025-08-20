@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Navbar = () => {
@@ -6,12 +7,14 @@ const Navbar = () => {
     <>
       <div className="Container flex justify-between items-center">
         <div>
-          <Image
-            src={"/Group 5.png"}
-            width={144}
-            height={200}
-            alt="Banner.png"
-          />
+          <Link href={"/"} className="cursor-pointer">
+            <Image
+              src={"/Group 5.png"}
+              width={144}
+              height={200}
+              alt="Banner.png"
+            />
+          </Link>
         </div>
 
         <div className="flex gap-4 items-center">
