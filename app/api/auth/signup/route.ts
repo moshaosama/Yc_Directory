@@ -1,17 +1,35 @@
 import DB from "@/app/api/db";
-import {NextResponse} from "next/server";
-import bcrypt from "bcryptjs"
+import { NextResponse } from "next/server";
+import bcrypt from "bcryptjs";
 
 export async function POST(request: Request) {
-    const {email, password} = request.body;
+    try {
+        const body = await request.json();
+        const { username, email, password } = body;
 
-    if(!email || !password) {
-        NextResponse.json({
-            status: 404,
-            message: "Please Enter Your Data",
-        })
+        if (!email || !password) {
+            return NextResponse.json({
+                status: 400,
+                message: "Please enter your data",
+            });
+        }
+
+        const PasswordCryption = await bcrypt.hash(password, 12);
+
+        const Query = "INSERT INTO user (username, email, password) VALUES (?, ?, ?)";
+        const Value = [username, email, PasswordCryption];
+
+        await DB.promise().query(Query, Value);
+
+        return NextResponse.json({
+            status: 200,
+            message: "Created user successfully"
+        });
+    } catch (error) {
+        console.error(error);
+        return NextResponse.json({
+            status: 500,
+            message: "Server error"
+        });
     }
-
-    const PasswordCryption =bcrypt.hash(password, 12);
-
 }
