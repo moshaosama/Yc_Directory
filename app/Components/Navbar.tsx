@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import {LoginWrabber} from "@/app/libs/LoginWrabber";
 
 const Navbar = () => {
   return (
@@ -17,24 +18,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div className="flex gap-4 items-center">
-          <div>
-            <h1 className="font-bold">Create</h1>
-          </div>
-
-          <div>
-            <h1 className="font-bold text-[#EF4444]">Logout</h1>
-          </div>
-
-          <div>
-            <Image
-              src={"/Frame 70.png"}
-              alt="frame.ong"
-              width={40}
-              height={40}
-            />
-          </div>
-        </div>
+        <LoginWrabber/>
       </div>
     </>
   );
