@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import PitchDetails from "./PitchDetails";
 import EditorPicks from "./EditorPicks";
+import Link from "next/link";
 
 const StartupDetails = async ({ params }: { params: { id: number } }) => {
   const data = await useGetStartUpByid(params.id);
@@ -17,7 +18,10 @@ const StartupDetails = async ({ params }: { params: { id: number } }) => {
 
         <div className="flex flex-col justify-between w-[65pc] mt-5">
           <div className="flex justify-between items-center">
-            <div className=" flex  items-center gap-3">
+            <Link
+              href={`${data?.[0]?.id}/user`}
+              className=" flex  items-center gap-3 cursor-pointer"
+            >
               <div>
                 <img src="/Frame 70.png" alt="frame.png" width={65} />
               </div>
@@ -26,7 +30,7 @@ const StartupDetails = async ({ params }: { params: { id: number } }) => {
                 <h1 className="font-semibold">Nipunraj</h1>
                 <p className="text-[#9b9b9b]">@nipunrajk</p>
               </div>
-            </div>
+            </Link>
 
             <div>
               <h1 className="p-1 flex justify-center items-center text-sm bg-[#ee2b693d] w-14 rounded-full">
