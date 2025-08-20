@@ -19,7 +19,7 @@ const Hero = ({ Campaign, Description, Title, isInput, height }: HeroProps) => {
         )}
         style={{ height: height }}
       >
-        <div className="bg-[#FBE843] p-1 rounded-sm">
+        <div className={cn("bg-[#FBE843] rounded-sm", Campaign && "p-1")}>
           <h1>{Campaign}</h1>
         </div>
 
