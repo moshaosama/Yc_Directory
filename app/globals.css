@@ -38,6 +38,16 @@
 .UserCard {
   @apply w-52  rounded-xl border-4 border-black absolute -top-5 left-9  flex justify-center;
 }
+.BtnLogin {
+    @apply bg-black hover:bg-gray-800 w-56 py-3 text-white rounded-xl font-bold text-lg cursor-pointer
+}
+
+.ParentForm {
+    @apply col-span-2 w-full flex flex-col gap-4
+}
+.InputForm {
+    @apply py-4 focus:outline-0 border-4 border-black rounded-4xl px-3 text-xl font-bold
+}
 
 body {
   background: var(--background);
