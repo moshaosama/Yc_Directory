@@ -19,7 +19,7 @@ const StartupDetails = async ({ params }: { params: { id: number } }) => {
         <div className="flex flex-col justify-between w-[65pc] mt-5">
           <div className="flex justify-between items-center">
             <Link
-              href={`${data?.[0]?.id}/user`}
+              href={`user/6`}
               className=" flex  items-center gap-3 cursor-pointer"
             >
               <div>
