@@ -19,7 +19,7 @@ export async function POST(request: Request) {
         const Query = "INSERT INTO user (username, email, password) VALUES (?, ?, ?)";
         const Value = [username, email, PasswordCryption];
 
-        await DB.promise().query(Query, Value);
+        await DB.query(Query, Value);
 
         return NextResponse.json({
             status: 200,
