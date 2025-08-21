@@ -6,7 +6,8 @@ import LogoutButton from "./LogoutBtn";
 
 async function Navbar() {
   const cookieStore = cookies();
-  const token = (await cookieStore).get("token");
+    const token = (await cookieStore).get("token");
+    const user = (await cookieStore).get("user");
 
   const handleLogout = () => {
     fetch("http://localhost:3003/api/auth/logout", {
@@ -15,6 +16,17 @@ async function Navbar() {
       return res.json();
     });
   };
+
+    let parsedUser = null;
+
+    if (user?.value) {
+        try {
+            parsedUser = JSON.parse(decodeURIComponent(user.value));
+        } catch (err) {
+            console.error("Error parsing user cookie:", err);
+        }
+    }
+
 
   return (
     <div className="Container flex justify-between items-center">
@@ -32,19 +44,19 @@ async function Navbar() {
       <div>
         {token?.value ? (
           <div className="flex gap-4 items-center">
-            <div>
+            <Link href="/startup/create">
               <h1 className="font-bold cursor-pointer">Create</h1>
-            </div>
+            </Link>
 
             <LogoutButton />
-            <div>
+            <Link href={`/user/${parsedUser?.id}`}>
               <Image
                 src={"/Frame 70.png"}
                 alt="frame.ong"
                 width={40}
                 height={40}
               />
-            </div>
+            </Link>
           </div>
         ) : (
           <div className="flex gap-4 items-center">
