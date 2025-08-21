@@ -49,5 +49,13 @@ export async function POST (request: Request) {
         httpOnly: true,
         sameSite:"strict"
     })
+
+    response.cookies.set({
+        name: "user",
+        value: JSON.stringify({ id: user.id, email: user.email, userName: user.username }),
+        maxAge: 60 * 60,
+        httpOnly: true,
+        sameSite: "strict"
+    });
     return  response;
 }
