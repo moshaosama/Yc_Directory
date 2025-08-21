@@ -15,7 +15,7 @@ export async function POST (request: Request) {
 
     const getuserQuery = "SELECT * FROM user WHERE email = ?"
     const getuserValue = [email];
-    const [users] = await DB.promise().query("SELECT * FROM user WHERE email = ?", [email]);
+    const [users] = await DB.query("SELECT * FROM user WHERE email = ?", [email]);
 
     if (!users || users.length === 0) {
         return NextResponse.json({
