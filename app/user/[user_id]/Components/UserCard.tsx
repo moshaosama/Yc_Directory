@@ -5,7 +5,7 @@ const UserCard = () => {
     <>
       <div className="parentUserCard">
         <img
-          src="/Frame 70.png"
+          src="/Frame%2070.png"
           alt="Frame.png"
           width={200}
           height={200}
