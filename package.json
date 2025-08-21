@@ -9,10 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-react": "^11.0.0",
     "@tanstack/react-query": "^5.85.3",
     "axios": "^1.11.0",
     "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.2",
+    "ckeditor5": "^46.0.2",
+    "ckeditor5-premium-features": "^46.0.2",
     "clsx": "^2.1.1",
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.540.0",
