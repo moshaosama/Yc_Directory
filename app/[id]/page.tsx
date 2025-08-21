@@ -9,13 +9,13 @@ const page = async ({ params }: { params: { id: number } }) => {
   return (
     <>
       <Hero
-        Campaign={data?.[0].date}
-        Title={data?.[0].tag}
-        Description={data?.[0].description}
+        Campaign={data?.[0]?.date}
+        Title={data?.[0]?.tag}
+        Description={data?.[0]?.description}
         isInput={false}
         height="20pc"
       />
-      <StartupDetails params={{ id: params.id }} />
+      <StartupDetails params={{ id: params?.id }} />
     </>
   );
 };
