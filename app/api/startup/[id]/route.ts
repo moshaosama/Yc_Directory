@@ -10,7 +10,7 @@ export async function GET(
   const Query = "SELECT * FROM start_up WHERE id = ?";
   const Value = [id];
 
-  const [result] = await DB.promise().query(Query, Value);
+  const [result] = await DB.query(Query, Value);
 
   return NextResponse.json(result);
 }
